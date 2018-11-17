@@ -7,7 +7,7 @@ export default class Doc extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      route: window.location.hash.substr(1)
+      route: window.location.hash.substr(1),
     };
   }
 
@@ -24,6 +24,7 @@ export default class Doc extends React.Component {
   }
 
   renderComponents = () => {
+    console.log(componentData);
     return componentData.map(component => component.name);
   }
 

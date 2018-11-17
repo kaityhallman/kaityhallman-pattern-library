@@ -13,7 +13,7 @@ class CodeExample extends React.Component {
 
   render() {
     return (
-      <pre ref={ref => { this.element = ref }}>
+      <pre ref={ref => { this.element = ref; }}>
         <code>
           {this.props.children}
         </code>
@@ -24,6 +24,6 @@ class CodeExample extends React.Component {
 
 CodeExample.propTypes = {
   children: PropTypes.string.isRequired
-}
+};
 
 export default CodeExample;
