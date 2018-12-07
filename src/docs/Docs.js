@@ -24,7 +24,6 @@ export default class Doc extends React.Component {
   }
 
   renderComponents = () => {
-    console.log(componentData);
     return componentData.map(component => component.name);
   }
 
@@ -33,7 +32,10 @@ export default class Doc extends React.Component {
     const component = this.renderRoute(route);
 
     return (
-      <div>
+      <div className="page-grid">
+        <div className="page-head">
+          <h1>React Styleguide</h1>
+        </div>
         <Navigation components={this.renderComponents()} />
         <ComponentPage component={component} />
       </div>

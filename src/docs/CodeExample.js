@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// we import down to what we need from highlight because otherwise, it adds
-// 170K gzipped to bundle since all languages are included
-import highlight from 'highlight.js/lib/highlight';
+import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
+
+// This way is easy, but adds 170k gzipped to bundle since all langs are included.
+// import HighLight from 'react-highlight';
 
 class CodeExample extends React.Component {
   componentDidMount() {
-    highlight.registerLanguage('javascript', javascript);
-    highlight.highlightBlock(this.element);
+    hljs.registerLanguage('javascript', javascript);
+    hljs.highlightBlock(this.element);
   }
 
   render() {
     return (
-      <pre ref={ref => { this.element = ref; }}>
+      <pre ref={ref => { this.element = ref }}>
         <code>
           {this.props.children}
         </code>
@@ -24,6 +25,6 @@ class CodeExample extends React.Component {
 
 CodeExample.propTypes = {
   children: PropTypes.string.isRequired
-};
+}
 
 export default CodeExample;
