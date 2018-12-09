@@ -6,11 +6,11 @@ const Props = ({props}) => {
     <table className="props">
       <thead>
         <tr>
+          <th>Required</th>
           <th>Name</th>
           <th>Description</th>
           <th>Type</th>
           <th>Default</th>
-          <th>Required</th>
         </tr>
       </thead>
       <tbody>
@@ -18,11 +18,17 @@ const Props = ({props}) => {
           Object.keys(props).map(key => {
             return (
               <tr key={key}>
+                <td>{props[key].required && 'X'}</td>
                 <td>{key}</td>
                 <td>{props[key].description}</td>
                 <td>{props[key].type.name}</td>
-                <td>{props[key].defaultValue && props[key].defaultValue.value}</td>
-                <td>{props[key].required && 'X'}</td>
+                <td>
+                  {
+                    props[key].defaultValue
+                      ? props[key].defaultValue.value
+                      : '-'
+                  }
+                </td>
               </tr>
             );
           })

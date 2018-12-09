@@ -1,21 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import hljs from 'highlight.js/lib/highlight';
-import javascript from 'highlight.js/lib/languages/javascript';
-
-// This way is easy, but adds 170k gzipped to bundle since all langs are included.
-// import HighLight from 'react-highlight';
+import Prism from 'prismjs';
 
 class CodeExample extends React.Component {
   componentDidMount() {
-    hljs.registerLanguage('javascript', javascript);
-    hljs.highlightBlock(this.element);
+    Prism.highlightAll();
   }
 
   render() {
     return (
       <pre ref={ref => { this.element = ref }}>
-        <code>
+        <code className="language-javascript">
           {this.props.children}
         </code>
       </pre>

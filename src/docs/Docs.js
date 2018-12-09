@@ -34,7 +34,7 @@ export default class Doc extends React.Component {
     return (
       <div className="page-grid">
         <div className="page-head">
-          <h1>React Styleguide</h1>
+          <h1>Pattern Library</h1>
         </div>
         <Navigation components={this.renderComponents()} />
         <ComponentPage component={component} />

@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: .75em;
+  margin-bottom: 0.5em;
   margin-top: 0;
 }
 
@@ -29,10 +29,9 @@ a, a:visited {
 }
 
 table {
-  border-collapse:collapse;
+  border-collapse: collapse;
 }
 
-/* Documentation site component styles */
 .page-grid {
   display:  grid;
   grid-template-areas: "header header"
@@ -41,11 +40,9 @@ table {
 }
 
 .example {
-  background-color: #f4f6f9;
-  border: solid 1px #d3d3d3;
   grid-area: content;
   margin-bottom: 16px;
-  padding: 16px;
+  padding: 16px 0;
 }
 
 .example h4:first-of-type {
@@ -56,21 +53,36 @@ table {
    margin-bottom: 0;
 }
 
-.props tbody tr:nth-child(odd) {
-  background-color: #f4f6f9;
+.props {
+  margin-bottom: 2em;
+  width: 100%;
 }
 
-.props tr td:last-of-type {
-  text-align: center;
+.props th {
+  color: #ababab;
+  font-size: 14px;
 }
 
 .props th, td {
-  padding: .5em;
+  padding: 0.75em;
   text-align: left;
 }
 
 .props td {
-  border-top: solid 1px #d3d3d3;
+  border-top: solid 1px #eeeeee;
+}
+
+.props tbody {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+}
+
+.props td:first-child {
+  text-align: center;
+}
+
+.props td:nth-child(2) {
+  font-weight: bold;
 }
 
 .page-head {
@@ -112,4 +124,9 @@ table {
 .component-page {
   grid-area: content;
   padding: 1rem;
+  width: 75%;
+}
+
+.component-page h2 {
+  font-size: 2em;
 }

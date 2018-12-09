@@ -17,18 +17,21 @@ const ComponentPage = ({ component }) => {
   const renderProps = () => {
     return props
       ? <Props props={props} />
-      : 'This component accepts no props.';
+      : (
+        <div className="props">
+          This component accepts no props.
+        </div>
+      );
   }
 
   return (
     <div className="component-page">
       <h2>{name}</h2>
+      <a href="#">Source</a>
       <p>{description}</p>
-
+      {renderProps()}
       {examples && <React.Fragment>
-        <h3>Example {examples.length > 1 && 's'}</h3>
         {renderExamples()}
-        {renderProps()}
       </React.Fragment>}
     </div>
   );

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Docs from './docs/Docs';
 import * as serviceWorker from './serviceWorker';
-import '../node_modules/highlight.js/styles/obsidian.css';
+import '../node_modules/prismjs/themes/prism-tomorrow.css';
 
 ReactDOM.render(<Docs />, document.getElementById('root'));
 
