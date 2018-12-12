@@ -1,9 +1,10 @@
 import React from 'react';
 import Navigation from './Navigation';
 import ComponentPage from './ComponentPage';
+import Homepage from './Homepage';
 import componentData from '../../config/componentData';
 
-export default class Doc extends React.Component {
+export default class Docs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +21,7 @@ export default class Doc extends React.Component {
   renderRoute = (route) => {
     return route
       ? componentData.filter(component => component.name === route)[0]
-      : componentData[0];
+      : {};
   }
 
   renderComponents = () => {
@@ -37,7 +38,12 @@ export default class Doc extends React.Component {
           <h1>Pattern Library</h1>
         </div>
         <Navigation components={this.renderComponents()} />
-        <ComponentPage component={component} />
+        <div className="component-page">
+          {route
+            ? <ComponentPage component={component} />
+            : <Homepage />
+          }
+        </div>
       </div>
     );
   }

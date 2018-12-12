@@ -25,7 +25,7 @@ const ComponentPage = ({ component }) => {
   }
 
   return (
-    <div className="component-page">
+    <React.Fragment>
       <h2>{name}</h2>
       <a href="#">Source</a>
       <p>{description}</p>
@@ -33,7 +33,7 @@ const ComponentPage = ({ component }) => {
       {examples && <React.Fragment>
         {renderExamples()}
       </React.Fragment>}
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -70,7 +70,8 @@ class RegistrationForm extends React.Component {
             label="Email"
             value={email}
             error={errors.email}
-            required />
+            required
+          />
 
           <PasswordInput
             htmlId="registration-form-password"
@@ -80,7 +81,8 @@ class RegistrationForm extends React.Component {
             quality={this.passwordQuality(password)}
             showVisibilityToggle
             maxLength={50}
-            error={errors.password} />
+            error={errors.password}
+          />
 
           <input type="submit" value="Register" onClick={this.onSubmit} />
         </div>

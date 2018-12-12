@@ -9,11 +9,13 @@ class CodeExample extends React.Component {
 
   render() {
     return (
-      <pre ref={ref => { this.element = ref }}>
-        <code className="language-javascript">
-          {this.props.children}
-        </code>
-      </pre>
+      <React.Fragment>
+        <pre ref={ref => { this.element = ref }}>
+          <code className="language-javascript">
+            {this.props.children}
+          </code>
+        </pre>
+      </React.Fragment>
     );
   }
 }

@@ -59,7 +59,7 @@ function getExampleData(examplesPath, componentName) {
       // So remove the .js extension to get the component name.
       name: file.slice(0, -3),
       description: info.description,
-      code: content
+      code: content,
     };
   });
 }

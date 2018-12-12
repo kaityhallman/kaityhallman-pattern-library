@@ -9,7 +9,7 @@ class PasswordInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPassword: false
+      showPassword: false,
     }
   }
 
@@ -41,7 +41,7 @@ class PasswordInput extends React.Component {
           <div
             onClick={this.toggleShowPassword}
             style={{ marginLeft: 5 }}>
-            <EyeIcon />
+            <EyeIcon toggled={this.state.showPassword} />
           </div>
         }
         {
